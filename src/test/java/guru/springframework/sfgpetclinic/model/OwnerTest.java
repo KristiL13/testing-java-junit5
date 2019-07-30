@@ -2,6 +2,8 @@ package guru.springframework.sfgpetclinic.model;
 
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OwnerTest {
@@ -21,6 +23,9 @@ class OwnerTest {
                         () -> assertEquals("Tallinn", owner.getCity(), "City did not match"),
                         () -> assertEquals("6555444", owner.getTelephone(), "Telephone did not match"))
                 );
+
+        // Hamcresti näide: Matchers and assertions, L57
+        assertThat(owner.getCity(), is("Tallinn")); // annad enne selle, mis ta saab, siis võrdlus data
     }
 
 }
